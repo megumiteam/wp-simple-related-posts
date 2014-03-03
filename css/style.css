@@ -1,0 +1,165 @@
+.srp_relationship {
+    overflow: hidden;
+    position: relative;
+}
+.srp_relationship .relationship_left {
+    float: left;
+    width: 50%;
+}
+.srp_relationship .relationship_right {
+    float: left;
+    width: 50%;
+}
+.srp_relationship .relationship_label {
+    color: #999999;
+    font-family: sans-serif;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: 5px;
+    position: absolute;
+}
+.srp_relationship .widefat {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.srp_relationship .widefat th {
+    border-bottom: 0 none;
+}
+.srp_relationship .relationship_search {
+    border-radius: 13px;
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 13px;
+    margin: 0;
+    padding: 5px 9px !important;
+}
+.srp_relationship .relationship_list {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #DFDFDF;
+    border-image: none;
+    border-right: 1px solid #DFDFDF;
+    border-style: solid;
+    border-width: 0 1px 1px;
+    height: 180px;
+    overflow: auto;
+    position: relative;
+}
+.srp_relationship .relationship_list li.hide {
+    background: none repeat scroll 0 0 #F8F8F8;
+}
+.srp_relationship .relationship_list li.hide a {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    color: #21759B !important;
+    cursor: default;
+    opacity: 0.5;
+}
+.srp_relationship .relationship_list li {
+    border-bottom: 1px solid #F8F8F8;
+}
+.srp_relationship .relationship_list li a {
+    display: block;
+    padding: 7px 9px;
+    position: relative;
+    text-decoration: none;
+}
+.srp_relationship .relationship_list li a .relationship-item-info {
+    color: #CCCCCC;
+    float: right;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+.srp_relationship .relationship_list li:hover a .relationship-item-info {
+    color: #999999;
+    padding-right: 24px;
+}
+.srp_relationship .relationship_list li.hide:hover a .relationship-item-info {
+    color: #CCCCCC;
+    padding-right: 0;
+}
+.srp_relationship .relationship_list li a:hover, .srp_relationship .relationship_list li a:focus {
+    background: none repeat scroll 0 0 #EAF2FA;
+    box-shadow: 0 0 0 1px #D6E1EC;
+    color: #000000;
+}
+.srp_relationship .relationship_right .relationship_list {
+    border-top-width: 1px;
+    height: 193px;
+    margin-left: 10px;
+    min-height: 193px;
+}
+
+.srp_relationship .relationship_list .title {
+	display: block;
+	width: 96%;
+}
+
+.srp_relationship .relationship_left .relationship_list .srp-button {
+	background-image: url("../images/add.png");
+	border-radius: 9px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    height: 18px;
+    width: 18px;
+}
+
+.srp_relationship .relationship_right .relationship_list .srp-button {
+	background-image: url("../images/remove.png");
+	border-radius: 9px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    height: 18px;
+    width: 18px;
+}
+
+
+.srp_relationship .relationship_list li a .srp-button, .srp_relationship .relationship_list li a .srp-button {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.srp_relationship .relationship_list li a:hover .srp-button, .srp_relationship .relationship_list li a:hover .srp-button {
+    display: block;
+}
+.srp_relationship .relationship_list li.hide a:hover .srp-button {
+    display: none;
+}
+.srp_relationship .relationship_right .relationship_list li a {
+    cursor: move;
+}
+.srp_relationship .load-more .srp-loading {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    padding: 0;
+}
+.srp_relationship.no-results .load-more {
+    display: none;
+}
+.srp_relationship select {
+    font-family: sans-serif;
+    font-size: 12px;
+}
+.srp_relationship .widefat tr + tr th {
+    background: none repeat scroll 0 0 #F3F3F3;
+    border-radius: 0;
+    border-top: 1px solid #DFDFDF;
+}
+.srp_relationship .relationship_list .result-thumbnail {
+    background: none repeat scroll 0 0 #F9F9F9;
+    border: 1px solid #E1E1E1;
+    float: left;
+    height: 21px;
+    margin: -3px 5px 0 0;
+    width: 21px;
+}
+
+#poststuff .relationship_right h3 {
+	border-bottom:none;
+}
+
+#poststuff .relationship_right h3 input {
+	float:right;
+}

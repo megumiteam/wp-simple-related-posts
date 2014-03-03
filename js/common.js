@@ -1,0 +1,150 @@
+(function($){
+	simpleRelatedPosts = 
+	{
+		init:function()
+		{
+			this.keyup();
+			this.sortable();
+			this.remove();
+			this.submit();
+			this.reset();
+		},
+		
+		sortable: function()
+		{
+			$( '.srp_relationship .relationship_right .relationship_list' ).sortable();
+		},
+		
+		keyup:function()
+		{
+			$('.srp_relationship .relationship_left .relationship_search').keyup(function(e){
+				var param = {
+					action: 'srp_search_posts',
+					s: $(this).val()
+				}
+				$.post(ajaxurl, param, function(ret) {
+					if ( ret == '' ) {
+						return false;
+					}
+
+					var output = '';
+					$.each(ret, function(index, item) {
+						var title = '';
+						
+						if ( item.post_thumbnail != '' ) {
+							title += '<div class="result-thumbnail">'+item.post_thumbnail+'</div>';
+						}
+						title += item.post_title;
+						
+						output += '<li><a class="" data-post_id="'+item.ID+'" href="'+item.permalink+'"><span class="title">'+title+'</span><span class="srp-button"></span></a></li>' + "\n";
+					});
+					$('.srp_relationship .relationship_left .relationship_list').html(output);
+					simpleRelatedPosts.add();
+					$('.srp_relationship .relationship_right .relationship_list li').each(function(index, item) {
+      					$('.srp_relationship .relationship_left .relationship_list li').each(function(index_2, item_2) {
+      						if($(item).children('a').attr('data-post_id') == $(item_2).children('a').attr('data-post_id')) {
+	      						$(item_2).addClass('hide');
+		  					}
+		  				});
+		  			});
+				},'json');
+			});
+		},
+		
+		add: function()
+		{
+			$('.srp_relationship .relationship_left .relationship_list li a').on( 'click', function(e){
+			 	e.preventDefault();
+			 	
+			 	var post_id = $(this).attr('data-post_id'), flg = true;
+
+      			$('.srp_relationship .relationship_right .relationship_list li').each(function(index, item) {
+      				if ( (index+1) >= srp_display_num ) {
+	      				alert(objectL10n.alert.replace('%d', srp_display_num));
+	      				flg = false;
+      				}
+      			
+      				if($(item).children('a').attr('data-post_id') == post_id) {
+      					flg = false;
+		  			}
+      			});
+	  			
+	  			if (flg) {
+					$(this).closest('li').clone(false).prependTo('.srp_relationship .relationship_right .relationship_list').css('background-color', '#EAF2FA').animate({
+						backgroundColor: "#FFFFF",
+					}, 1200);
+					$(this).closest('li').addClass('hide');
+					simpleRelatedPosts.remove();
+      			}
+			});
+		},
+		
+		remove: function()
+		{
+
+			$('.srp_relationship .relationship_right .relationship_list li a .srp-button').on( 'click', function(e){
+			 	e.preventDefault();
+			 	$(this).closest('li').fadeOut("slow").queue(function () {
+					$(this).remove();
+      			});
+      			
+      			var post_id = $(this).closest('a').attr('data-post_id');
+      			$('.srp_relationship .relationship_left .relationship_list li').each(function(index, item) {
+      				if($(item).children('a').attr('data-post_id') == post_id) {
+	      				$(item).removeClass('hide');
+      				}
+      			});
+      			
+			});
+		},
+		
+		submit: function()
+		{
+			$('#post').submit(function(){
+				$('.srp_relationship .relationship_right .relationship_list li').each(function(index, item) {
+					$('<input />').attr('type', 'hidden')
+					.attr('name', 'simple_related_posts[]')
+					.attr('value', $(item).children('a').attr('data-post_id'))
+					.appendTo('#post');
+				});
+			});
+		},
+		
+		reset: function()
+		{
+			$('.srp_relationship .relationship_right #srp-reset').on('click', function(e){
+				var param = {
+					action: 'srp_reset_related_posts',
+					post_id: srp_post_id 
+				}
+				$.post(ajaxurl, param, function(ret) {
+					if ( ret == '' ) {
+						return false;
+					}
+
+					var output = '';
+					$.each(ret, function(index, item) {
+						var title = '';
+						
+						if ( item.post_thumbnail != '' ) {
+							title += '<div class="result-thumbnail">'+item.post_thumbnail+'</div>';
+						}
+						title += item.post_title;
+						
+						output += '<li><a class="" data-post_id="'+item.ID+'" href="'+item.permalink+'"><span class="title">'+title+'</span><span class="srp-button"></span></a></li>' + "\n";
+					});
+					$('.srp_relationship .relationship_right .relationship_list').html(output);
+					simpleRelatedPosts.remove();
+					$('.srp_relationship .relationship_right .relationship_list').css('background-color', '#EAF2FA').animate({
+						backgroundColor: "#FFFFF",
+					}, 1200);
+				},'json');
+			});
+		}
+		
+	},
+	$(document).ready(function ()	
+    {
+        simpleRelatedPosts.init();
+    })
+})(jQuery);
