@@ -1,6 +1,6 @@
 <?php 
 /*
-Plugin Name: Simple Related Posts
+Plugin Name: WP Simple Related Posts
 Plugin URI: http://www.kakunin-pl.us/
 Description: Display Related Posts. Very Simple.
 Author: horike takahiro
@@ -33,7 +33,9 @@ if ( ! defined( 'SRP_PLUGIN_URL' ) )
 
 if ( ! defined( 'SRP_PLUGIN_DIR' ) )
 	define( 'SRP_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ));
-	
+
+require_once(SRP_PLUGIN_DIR . '/modules/base.php');
+
 $srp_dirs = array(
 	SRP_PLUGIN_DIR . '/admin/',
 	SRP_PLUGIN_DIR . '/modules/'

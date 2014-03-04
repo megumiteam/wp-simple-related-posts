@@ -1,4 +1,4 @@
-=== Simple Related Posts ===
+=== WP Simple Related Posts ===
 Contributors: horike,megumithemes
 Tags:  related posts,related
 Requires at least: 3.8.1
