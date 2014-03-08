@@ -1,13 +1,16 @@
 <?php
 class Simple_Related_Posts_Category extends Simple_Related_Posts_Base {
 	
-	public function get_data_original( $num = '' ) {
+	public function get_data_original( $num = '', $post_id = null ) {
 		global $wpdb, $post;
+		
+		if ( !isset($post_id) )
+    		$post_id = $post->ID;
 
-		if ( empty( $post ) )
+		if ( empty( $post_id ) )
 			return false;
 
-		$current_categories = get_the_category( $post->ID );
+		$current_categories = get_the_category( $post_id );
 		if ( !$current_categories )
 			return false;
 		
@@ -30,7 +33,7 @@ class Simple_Related_Posts_Category extends Simple_Related_Posts_Base {
 			WHERE (tt.taxonomy = 'category' AND tt.term_id IN ({$category_list}))
 			AND p.post_status = 'publish'
 			AND p.post_type = 'post'
-			AND p.ID != {$post->ID}
+			AND p.ID != {$post_id}
 			GROUP BY tr.object_id
 			ORDER BY post_date DESC" . $wpdb->prepare( " LIMIT %d", $num );
 

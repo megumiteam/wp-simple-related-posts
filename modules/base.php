@@ -28,16 +28,23 @@ class Simple_Related_Posts_Base {
 
 	}
 	public function get_data( $num = '' ) {
-		$related_posts = $this->get_data_post_meta($num);
+		$related_posts = $this->get_data_post_meta($num, get_the_ID());
 		if ( !$related_posts )
-			$related_posts = $this->get_data_original($num);
+			$related_posts = $this->get_data_original($num, get_the_ID());
 			
 		return $related_posts;
 	}
 
-	public function get_data_post_meta( $num = '' ) {
+	public function get_data_post_meta( $num = '', $posts_id = null ) {
 		global $post;
-		$posts = get_post_meta( $post->ID, 'simple_related_posts', true );
+		
+		if ( !isset( $post_id ) )
+    		$post_id = $post->ID;
+    		
+    	if ( empty( $post_id ) )
+			return false;
+
+		$posts = get_post_meta( $post_id, 'simple_related_posts', true );
 		
 		if ( !$posts )
 			return false;
@@ -54,8 +61,9 @@ class Simple_Related_Posts_Base {
 		if ( $current_num > $display_num ) {
 			$num = $current_num - $display_num;
 			for ($i = 0; $i < $num; $i++) {
-				$posts_ids = array_pop($posts_ids);
+				array_pop($posts_ids);
 			}
+			return $posts_ids;
 		} elseif ( $current_num < $display_num ) {
 			$num = $display_num - $current_num;
 			$posts = $this->get_data_original( $num );
