@@ -1,0 +1,24 @@
+.simple-related-posts {
+	list-style: none;
+}
+
+.simple-related-posts * {
+	margin:0;
+	padding:0;
+}
+
+.simple-related-posts li {
+	margin-bottom: 10px;
+}
+
+.simple-related-posts li a {
+	display: block;
+}
+.simple-related-posts li a p {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.simple-related-posts li .thumb {
+	padding-right: 10px;
+}

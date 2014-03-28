@@ -158,6 +158,7 @@
 
 #poststuff .relationship_right h3 {
 	border-bottom:none;
+	margin-bottom: 10px;
 }
 
 #poststuff .relationship_right h3 input {

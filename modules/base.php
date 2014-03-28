@@ -18,9 +18,13 @@ class Simple_Related_Posts_Base {
 		if ( !$posts )
 			return false;
 
-		$html = '<h2 class="simple-related-posts-title">' . __( 'Related Posts', SRP_DOMAIN ) . '</h2><ul class="simple-related-posts">';
+		$html = '<h2 class="simple-related-posts-title">' . apply_filters( 'sirp_title' , __( 'Related Posts', SRP_DOMAIN ) ) . '</h2><ul class="simple-related-posts">';
 		foreach( $posts as $post ) {
-			$html .= '<li><a href="' . get_permalink( $post['ID'] ) . '" >' . get_the_title($post['ID']) . '</a></li>';
+			$html .= '<li><a href="' . get_permalink( $post['ID'] ) . '" >';
+			$html .= apply_filters( 'sirp_before_post_title', '', $post['ID'] );
+			$html .= apply_filters( 'sirp_post_title', '<p class="title">' . get_the_title($post['ID']) . '</p>', $post['ID'] );
+			$html .= apply_filters( 'sirp_after_post_title', '', $post['ID'] );
+			$html .= '</a></li>';
 		}
 		$html .= '</ul>';
 

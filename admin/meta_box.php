@@ -106,7 +106,6 @@ class Simple_Related_Posts_Admin_Meta_Box {
 		</table>
 		<ul class="relationship_list">
 			<li class="load-more">
-				<div class="acf-loading"></div>
 			</li>
 		</ul>
 	</div>

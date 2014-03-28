@@ -3,7 +3,7 @@ Contributors: horike,megumithemes
 Tags:  related posts,related
 Requires at least: 3.8.1
 Tested up to: 3.8.1
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 
 Related Posts plugin. It's flexible and fast and simple.
 
@@ -34,5 +34,5 @@ gmail:horike37@gmail.com
 == Changelog ==
 = 1.0 =
 * first release. 
-= 1.2 =
-* Add head image
+= 1.2.2 =
+* Add thumbnail image

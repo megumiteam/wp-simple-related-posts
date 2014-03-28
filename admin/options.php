@@ -34,6 +34,8 @@ class Simple_Related_Posts_Admin_Options {
 		add_settings_field( 'srp_target', __( 'Display method', SRP_DOMAIN ), array( $this, 'setting_srp_target' ), 'srp', 'srp_main' );
 		add_settings_field( 'srp_display_num',  __( 'Views', SRP_DOMAIN ), array( $this, 'setting_srp_display_num' ), 'srp', 'srp_main' );
 		add_settings_field( 'srp_post_content',  __( 'Post Content', SRP_DOMAIN ), array( $this, 'setting_srp_post_content' ), 'srp', 'srp_main' );
+		add_settings_field( 'srp_post_thumbnail',  __( 'Post Thumbnail', SRP_DOMAIN ), array( $this, 'setting_srp_post_thumbnail' ), 'srp', 'srp_main' );
+		add_settings_field( 'srp_original_css',  __( 'CSS', SRP_DOMAIN ), array( $this, 'setting_srp_original_css' ), 'srp', 'srp_main' );
 		//add_settings_field( 'srp_rss_post_content',  __( 'RSS', SRP_DOMAIN ), array( $this, 'setting_srp_rss_post_content' ), 'srp', 'srp_main' );
 	}
 	
@@ -59,6 +61,18 @@ class Simple_Related_Posts_Admin_Options {
 
 		echo '<label for="srp_post_content"><input id="srp_post_content" name="srp_options[post_content]" type="checkbox" '.checked( $options['post_content'], 1, false ).' value="1" />' . __( 'Allow to display related posts at the end of the post content automatically', SRP_DOMAIN ) . '</label>';
 	}
+	
+	public function setting_srp_post_thumbnail() {
+		$options = get_option( 'srp_options' );
+
+		echo '<label for="srp_post_thumbnail"><input id="srp_post_thumbnail" name="srp_options[post_thumbnail]" type="checkbox" '.checked( $options['post_thumbnail'], 1, false ).' value="1" />' . __( 'Allow to display a thumbnail to related posts', SRP_DOMAIN ) . '</label>';
+	}
+	
+	public function setting_srp_original_css() {
+		$options = get_option( 'srp_options' );
+
+		echo '<label for="srp_original_css"><input id="srp_original_css" name="srp_options[original_css]" type="checkbox" '.checked( $options['original_css'], 1, false ).' value="1" />' . __( 'Use css', SRP_DOMAIN ) . '</label>';
+	}
 
 	public function setting_srp_rss_post_content() {
 		$options = get_option( 'srp_options' );
@@ -70,6 +84,8 @@ class Simple_Related_Posts_Admin_Options {
 		$newinput['target'] = trim( $input['target'] );
 		$newinput['display_num'] = absint( $input['display_num'] );
 		$newinput['post_content'] = absint( $input['post_content'] );
+		$newinput['post_thumbnail'] = absint( $input['post_thumbnail'] );
+		$newinput['original_css'] = absint( $input['original_css'] );
 		$newinput['rss_post_content'] = absint( $input['rss_post_content'] );
 	
 		return $newinput;
