@@ -1,4 +1,5 @@
-<?php
+
+s<?php
 add_filter( 'sirp_before_post_title', 'sirp_default_before_post_title', 10, 2 );
 function sirp_default_before_post_title($html, $post_id) {
 	$options = get_option( 'srp_options' );
