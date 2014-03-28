@@ -33,6 +33,7 @@ class Simple_Related_Posts_Admin_Options {
 		add_settings_section( 'srp_main', __( 'Configuration', SRP_DOMAIN ), array( $this, 'srp_section_text' ), 'srp' );	
 		add_settings_field( 'srp_target', __( 'Display method', SRP_DOMAIN ), array( $this, 'setting_srp_target' ), 'srp', 'srp_main' );
 		add_settings_field( 'srp_display_num',  __( 'Views', SRP_DOMAIN ), array( $this, 'setting_srp_display_num' ), 'srp', 'srp_main' );
+		add_settings_field( 'srp_title',  __( 'Related Posts Title', SRP_DOMAIN ), array( $this, 'setting_srp_title' ), 'srp', 'srp_main' );
 		add_settings_field( 'srp_post_content',  __( 'Post Content', SRP_DOMAIN ), array( $this, 'setting_srp_post_content' ), 'srp', 'srp_main' );
 		add_settings_field( 'srp_post_thumbnail',  __( 'Post Thumbnail', SRP_DOMAIN ), array( $this, 'setting_srp_post_thumbnail' ), 'srp', 'srp_main' );
 		add_settings_field( 'srp_original_css',  __( 'CSS', SRP_DOMAIN ), array( $this, 'setting_srp_original_css' ), 'srp', 'srp_main' );
@@ -56,6 +57,13 @@ class Simple_Related_Posts_Admin_Options {
 		echo '<input id="srp_display_num" name="srp_options[display_num]" size="2" type="text" value="' . esc_attr( $options['display_num'] ) . '" />';
 	}
 	
+	public function setting_srp_title() {
+		$options = get_option( 'srp_options', __('Related Posts', SRP_DOMAIN ) );
+		
+
+		echo '<input id="srp_title" name="srp_options[title]" size="15" type="text" value="' . esc_attr( $options['title'] ) . '" />';
+	}
+
 	public function setting_srp_post_content() {
 		$options = get_option( 'srp_options' );
 
@@ -85,6 +93,7 @@ class Simple_Related_Posts_Admin_Options {
 		$newinput['display_num'] = absint( $input['display_num'] );
 		$newinput['post_content'] = absint( $input['post_content'] );
 		$newinput['post_thumbnail'] = absint( $input['post_thumbnail'] );
+		$newinput['title'] = trim( $input['title'] );
 		$newinput['original_css'] = absint( $input['original_css'] );
 		$newinput['rss_post_content'] = absint( $input['rss_post_content'] );
 	

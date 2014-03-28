@@ -1,5 +1,4 @@
-
-s<?php
+<?php
 add_filter( 'sirp_before_post_title', 'sirp_default_before_post_title', 10, 2 );
 function sirp_default_before_post_title($html, $post_id) {
 	$options = get_option( 'srp_options' );
@@ -23,4 +22,13 @@ function sirp_add_stylesheet() {
 
 	wp_register_style( 'sirp-style', plugins_url('../css/simple-related-posts.css', __FILE__) );
 	wp_enqueue_style( 'sirp-style' );
+}
+
+add_filter( 'sirp_title', 'sirp_title' );
+function sirp_title($title) {
+	$options = get_option( 'srp_options' );
+	if ( isset($options['title']) && $options['title'] != '' )
+		return $options['title'];
+		
+	return $title;
 }
