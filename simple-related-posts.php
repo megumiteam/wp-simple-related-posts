@@ -4,7 +4,7 @@ Plugin Name: WP Simple Related Posts
 Plugin URI: http://www.kakunin-pl.us/
 Description: Display Related Posts. Very Simple.
 Author: horike takahiro
-Version: 1.2.3
+Version: 1.2.4
 Author URI: http://www.kakunin-pl.us/
 
 
@@ -34,21 +34,8 @@ if ( ! defined( 'SRP_PLUGIN_URL' ) )
 if ( ! defined( 'SIRP_PLUGIN_DIR' ) )
 	define( 'SIRP_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ));
 
-require_once(SIRP_PLUGIN_DIR . '/modules/base.php');
 
-$srp_dirs = array(
-	SIRP_PLUGIN_DIR . '/admin/',
-	SIRP_PLUGIN_DIR . '/modules/'
-);
-foreach ( $srp_dirs as $dir ) {
-	opendir($dir);
-	while(($ent = readdir()) !== false) {
-	    if(!is_dir($ent) && strtolower(substr($ent,-4)) == ".php") {
-	        require_once($dir.$ent);
-		}
-	}
-	closedir();
-}
+
 
 add_action( 'admin_init', 'simple_related_posts_install' );
 function simple_related_posts_install() {
@@ -71,10 +58,30 @@ class Simple_Related_Posts {
 	private $related = '';
 	
 	public function __construct() {
+		$this->requirements();
 		$option = get_option('srp_options');
 		if ( class_exists($option['target']) ) {
 			$this->related = new $option['target'];
 		}
+	}
+		
+	private function requirements() {
+		require_once(SIRP_PLUGIN_DIR . '/modules/base.php');
+
+		$srp_dirs = array(
+			SIRP_PLUGIN_DIR . '/admin/',
+			SIRP_PLUGIN_DIR . '/modules/'
+		);
+		foreach ( $srp_dirs as $dir ) {
+			opendir($dir);
+			while(($ent = readdir()) !== false) {
+				if(!is_dir($ent) && strtolower(substr($ent,-4)) == ".php") {
+					require_once($dir.$ent);
+				}
+			}
+			closedir();
+		}
+		do_action( 'sirp_addon_requirement' );
 	}
 	
 	public function get_data_original($num = '') {

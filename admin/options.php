@@ -48,7 +48,8 @@ class Simple_Related_Posts_Admin_Options {
 	
 		echo '<label for="srp_target_tag"><input id="srp_target_tag" name="srp_options[target]" type="radio" '.checked( $options['target'], 'Simple_Related_Posts_Tag', false ).' value="Simple_Related_Posts_Tag" />' . __( 'View Related Posts based on tags', SRP_DOMAIN ) . '</label><br />';
 		echo '<label for="srp_target_category"><input id="srp_target_category" name="srp_options[target]" type="radio" '.checked( $options['target'], 'Simple_Related_Posts_Category', false ).' value="Simple_Related_Posts_Category" />' . __( 'View Related Posts based on categoris', SRP_DOMAIN ) . '</label><br />';
-		echo '<label for="srp_target_category_tag"><input id="srp_target_category_tag" name="srp_options[target]" type="radio" '.checked( $options['target'], 'Simple_Related_Posts_Category_Tag', false ).' value="Simple_Related_Posts_Category_Tag" />' . __( 'View Related Posts based on categoris and tag', SRP_DOMAIN ) . '</label>';
+		echo '<label for="srp_target_category_tag"><input id="srp_target_category_tag" name="srp_options[target]" type="radio" '.checked( $options['target'], 'Simple_Related_Posts_Category_Tag', false ).' value="Simple_Related_Posts_Category_Tag" />' . __( 'View Related Posts based on categoris and tag', SRP_DOMAIN ) . '</label><br />';
+		do_action( 'sirp_target_option', $options['target'] );
 	}
 	
 	public function setting_srp_display_num() {
