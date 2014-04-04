@@ -23,7 +23,7 @@ class Simple_Related_Posts_Category extends Simple_Related_Posts_Base {
 		$category_list = implode( ',', $categories );
 		
 		if ( $num == '' ) {
-			$option = get_option('srp_options');
+			$option = get_option('sirp_options');
 			$num = $option['display_num'];
 		}
 

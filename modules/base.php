@@ -3,7 +3,7 @@ class Simple_Related_Posts_Base {
 	protected $option = '';
 
 	public function __construct() {
-		$this->option = get_option('srp_options');
+		$this->option = get_option('sirp_options');
 		if ( $this->option['post_content'] == 1 )
 			add_filter( 'the_content', array($this, 'the_content') );
 	}
@@ -18,7 +18,7 @@ class Simple_Related_Posts_Base {
 		if ( !$posts )
 			return false;
 
-		$html = '<h2 class="simple-related-posts-title">' . apply_filters( 'sirp_title' , __( 'Related Posts', SRP_DOMAIN ) ) . '</h2><ul class="simple-related-posts">';
+		$html = '<h2 class="simple-related-posts-title">' . apply_filters( 'sirp_title' , __( 'Related Posts', SIRP_DOMAIN ) ) . '</h2><ul class="simple-related-posts">';
 		foreach( $posts as $post ) {
 			$html .= '<li><a href="' . get_permalink( $post['ID'] ) . '" >';
 			$html .= apply_filters( 'sirp_before_post_title', '', $post['ID'] );

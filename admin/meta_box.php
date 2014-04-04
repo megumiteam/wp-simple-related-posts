@@ -5,8 +5,8 @@ class Simple_Related_Posts_Admin_Meta_Box {
 		add_action( 'admin_menu', array( $this, 'add_meta_box' ) );
 		add_action( 'admin_footer-post.php', array( $this, 'admin_footer' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
-		add_action( 'wp_ajax_srp_search_posts', array( $this, 'srp_search_posts' ) );
-		add_action( 'wp_ajax_srp_reset_related_posts', array( $this, 'srp_reset_related_posts' ) );
+		add_action( 'wp_ajax_sirp_search_posts', array( $this, 'sirp_search_posts' ) );
+		add_action( 'wp_ajax_sirp_reset_related_posts', array( $this, 'sirp_reset_related_posts' ) );
 		
 	}
 	
@@ -14,7 +14,7 @@ class Simple_Related_Posts_Admin_Meta_Box {
 
 ?>
 <script>
-	var srp_post_id = <?php echo get_the_ID(); ?>;
+	var sirp_post_id = <?php echo get_the_ID(); ?>;
 </script>
 <?php
 	}
@@ -25,19 +25,19 @@ class Simple_Related_Posts_Admin_Meta_Box {
 	}
 
     public function admin_enqueue_scripts() {
-        wp_register_style( 'spr-admin-css', SRP_PLUGIN_URL . '/css/style.css' );
-        wp_enqueue_style( 'spr-admin-css' );
-        wp_register_script( 'spr-admin-js', SRP_PLUGIN_URL . '/js/common.js' );
-        wp_enqueue_script( 'spr-admin-js' );
-        wp_register_script( 'spr-color-js', SRP_PLUGIN_URL . '/js/jquery.color.js' );
-        wp_enqueue_script( 'spr-color-js' );
+        wp_register_style( 'sipr-admin-css', SIRP_PLUGIN_URL . '/css/style.css' );
+        wp_enqueue_style( 'sipr-admin-css' );
+        wp_register_script( 'sipr-admin-js', SIRP_PLUGIN_URL . '/js/common.js' );
+        wp_enqueue_script( 'sipr-admin-js' );
+        wp_register_script( 'sipr-color-js', SIRP_PLUGIN_URL . '/js/jquery.color.js' );
+        wp_enqueue_script( 'sipr-color-js' );
 		wp_enqueue_script( 'jquery-ui-sortable' );
-		wp_localize_script( 'spr-admin-js', 'objectL10n', array(
-			'alert' => __( 'Maximum number of Related Posts %d', SRP_DOMAIN ),
+		wp_localize_script( 'sipr-admin-js', 'objectL10n', array(
+			'alert' => __( 'Maximum number of Related Posts %d', SIRP_DOMAIN ),
 		) );
     }
     
-    public function srp_reset_related_posts() {
+    public function sirp_reset_related_posts() {
 	    global $simple_related_posts, $post;
 	    if ( !isset($_POST['post_id']) || !is_numeric($_POST['post_id']) )
     		return;
@@ -62,7 +62,7 @@ class Simple_Related_Posts_Admin_Meta_Box {
 		exit;
     }
     
-    public function srp_search_posts() {
+    public function sirp_search_posts() {
     	if ( !isset($_POST['s']) )
     		return;
 		
@@ -85,21 +85,21 @@ class Simple_Related_Posts_Admin_Meta_Box {
     }
 	
 	public function add_meta_box() {
-		add_meta_box( 'simple-related-posts', __( 'Related Posts', SRP_DOMAIN ), array( $this, 'meta_box' ), 'post', 'advanced', 'low' );
+		add_meta_box( 'simple-related-posts', __( 'Related Posts', SIRP_DOMAIN ), array( $this, 'meta_box' ), 'post', 'advanced', 'low' );
 	}
 	
 	public function meta_box() {
 		global $simple_related_posts;
 				
 		?>
-<div class="srp_relationship" >
+<div class="sirp_relationship" >
 	<!-- Left List -->
 	<div class="relationship_left">
 		<table class="widefat">
 			<thead>
 				<tr>
 					<th>
-						<input class="relationship_search" placeholder="<?php _e("Search...",SRP_DOMAIN); ?>" type="text" />
+						<input class="relationship_search" placeholder="<?php _e("Search...",SIRP_DOMAIN); ?>" type="text" />
 					</th>
 				</tr>
 			</thead>
@@ -113,7 +113,7 @@ class Simple_Related_Posts_Admin_Meta_Box {
 	
 	<!-- Right List -->
 	<div class="relationship_right">
-		<h3><?php _e("Related Posts to display", SRP_DOMAIN); ?><input type="button" id="srp-reset" class="button-secondary" value="<?php _e('Reset', SRP_DOMAIN); ?>" /></h3>
+		<h3><?php _e("Related Posts to display", SIRP_DOMAIN); ?><input type="button" id="sirp-reset" class="button-secondary" value="<?php _e('Reset', SIRP_DOMAIN); ?>" /></h3>
 		<ul class="bl relationship_list">
 		<?php
 			$related_posts = $simple_related_posts->get_data();
@@ -129,7 +129,7 @@ class Simple_Related_Posts_Admin_Meta_Box {
 					$title .= get_the_title($p['ID']);
 					
 					echo '<li>
-						<a href="' . get_permalink($p['ID']) . '" class="" data-post_id="' . $p['ID'] . '"><span class="title">' . $title . '</span><span class="srp-button"></span></a>
+						<a href="' . get_permalink($p['ID']) . '" class="" data-post_id="' . $p['ID'] . '"><span class="title">' . $title . '</span><span class="sirp-button"></span></a>
 					</li>';					
 				}	
 			}		

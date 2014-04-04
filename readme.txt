@@ -3,7 +3,7 @@ Contributors: horike,megumithemes
 Tags:  related posts,related
 Requires at least: 3.8.1
 Tested up to: 3.8.1
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 
 Related Posts plugin. It's flexible and fast and simple.
 

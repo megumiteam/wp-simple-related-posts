@@ -4,7 +4,7 @@ Plugin Name: WP Simple Related Posts
 Plugin URI: http://www.kakunin-pl.us/
 Description: Display Related Posts. Very Simple.
 Author: horike takahiro
-Version: 1.2.4
+Version: 1.2.5
 Author URI: http://www.kakunin-pl.us/
 
 
@@ -25,11 +25,11 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-if ( ! defined( 'SRP_DOMAIN' ) )
-	define( 'SRP_DOMAIN', 'simple-related-posts' );
+if ( ! defined( 'SIRP_DOMAIN' ) )
+	define( 'SIRP_DOMAIN', 'simple-related-posts' );
 	
-if ( ! defined( 'SRP_PLUGIN_URL' ) )
-	define( 'SRP_PLUGIN_URL', plugins_url() . '/' . dirname( plugin_basename( __FILE__ ) ));
+if ( ! defined( 'SIRP_PLUGIN_URL' ) )
+	define( 'SIRP_PLUGIN_URL', plugins_url() . '/' . dirname( plugin_basename( __FILE__ ) ));
 
 if ( ! defined( 'SIRP_PLUGIN_DIR' ) )
 	define( 'SIRP_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ));
@@ -45,11 +45,11 @@ function simple_related_posts_install() {
 			'display_num'  => 5,
 			'post_content' => 1,
 			'post_thumbnail'   => 1,
-			'title' => __('Related Posts', SRP_DOMAIN ),
+			'title' => __('Related Posts', SIRP_DOMAIN ),
 			'original_css' => 1,
 			'rss_post_content' => ''
 		);
-		update_option('srp_options', $args);
+		update_option('sirp_options', $args);
 		update_option('simple_related_posts_installed', 1);
 	}
 }
@@ -59,7 +59,7 @@ class Simple_Related_Posts {
 	
 	public function __construct() {
 		$this->requirements();
-		$option = get_option('srp_options');
+		$option = get_option('sirp_options');
 		if ( class_exists($option['target']) ) {
 			$this->related = new $option['target'];
 		}
@@ -68,11 +68,11 @@ class Simple_Related_Posts {
 	private function requirements() {
 		require_once(SIRP_PLUGIN_DIR . '/modules/base.php');
 
-		$srp_dirs = array(
+		$sirp_dirs = array(
 			SIRP_PLUGIN_DIR . '/admin/',
 			SIRP_PLUGIN_DIR . '/modules/'
 		);
-		foreach ( $srp_dirs as $dir ) {
+		foreach ( $sirp_dirs as $dir ) {
 			opendir($dir);
 			while(($ent = readdir()) !== false) {
 				if(!is_dir($ent) && strtolower(substr($ent,-4)) == ".php") {
