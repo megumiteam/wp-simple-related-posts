@@ -27,18 +27,29 @@
 						return false;
 					}
 
-					var output = '';
+					$('.sirp_relationship .relationship_left .relationship_list').html("");
 					$.each(ret, function(index, item) {
-						var title = '';
-						
-						if ( item.post_thumbnail != '' ) {
-							title += '<div class="result-thumbnail">'+item.post_thumbnail+'</div>';
-						}
-						title += item.post_title;
-						
-						output += '<li><a class="" data-post_id="'+item.ID+'" href="'+item.permalink+'"><span class="title">'+title+'</span><span class="sirp-button"></span></a></li>' + "\n";
+						$('.sirp_relationship .relationship_left .relationship_list').html("");
+						var itemList = $("<li>");
+						var itemLink = $("<a>");
+						itemLink.attr("data-post_id", item.ID);
+						itemLink.attr("href", item.permalink);
+						var span1 = $("<span>");
+						span1.attr("class", "title")
+						var span2 = $("<span>");
+						span2.attr("class", "sirp-button");
+						var itemDiv = $("<div>");
+						itemDiv.attr("class", "result-thumbnail")
+						itemDiv.text(item.post_thumbnail);
+						itemDiv.appendTo(span1);
+						var titleSpan = $("<span>");
+						titleSpan.text(item.post_title);
+						titleSpan.appendTo(span1);
+						span1.appendTo(itemLink);
+						span2.appendTo(itemLink);
+						itemLink.appendTo(itemList);
+						itemList.appendTo($('.sirp_relationship .relationship_left .relationship_list'));
 					});
-					$('.sirp_relationship .relationship_left .relationship_list').html(output);
 					simpleRelatedPosts.add();
 					$('.sirp_relationship .relationship_right .relationship_list li').each(function(index, item) {
       					$('.sirp_relationship .relationship_left .relationship_list li').each(function(index_2, item_2) {
@@ -122,18 +133,29 @@
 						return false;
 					}
 
-					var output = '';
+					$('.sirp_relationship .relationship_left .relationship_list').html("");
 					$.each(ret, function(index, item) {
-						var title = '';
-						
-						if ( item.post_thumbnail != '' ) {
-							title += '<div class="result-thumbnail">'+item.post_thumbnail+'</div>';
-						}
-						title += item.post_title;
-						
-						output += '<li><a class="" data-post_id="'+item.ID+'" href="'+item.permalink+'"><span class="title">'+title+'</span><span class="sirp-button"></span></a></li>' + "\n";
+						$('.sirp_relationship .relationship_left .relationship_list').html("");
+						var itemList = $("<li>");
+						var itemLink = $("<a>");
+						itemLink.attr("data-post_id", item.ID);
+						itemLink.attr("href", item.permalink);
+						var span1 = $("<span>");
+						span1.attr("class", "title")
+						var span2 = $("<span>");
+						span2.attr("class", "sirp-button");
+						var itemDiv = $("<div>");
+						itemDiv.attr("class", "result-thumbnail")
+						itemDiv.text(item.post_thumbnail);
+						itemDiv.appendTo(span1);
+						var titleSpan = $("<span>");
+						titleSpan.text(item.post_title);
+						titleSpan.appendTo(span1);
+						span1.appendTo(itemLink);
+						span2.appendTo(itemLink);
+						itemLink.appendTo(itemList);
+						itemList.appendTo($('.sirp_relationship .relationship_left .relationship_list'));
 					});
-					$('.sirp_relationship .relationship_right .relationship_list').html(output);
 					simpleRelatedPosts.remove();
 					$('.sirp_relationship .relationship_right .relationship_list').css('background-color', '#EAF2FA').animate({
 						backgroundColor: "#FFFFF",
