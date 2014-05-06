@@ -2,8 +2,8 @@
 Contributors: horike,megumithemes
 Tags:  related posts,related
 Requires at least: 3.8.1
-Tested up to: 3.8.1
-Stable tag: 1.2.7
+Tested up to: 3.9
+Stable tag: 1.3
 
 Related Posts plugin. It's flexible and fast and simple.
 
@@ -44,3 +44,6 @@ gmail:horike37@gmail.com
 * Add Related Posts title
 = 1.2.4 =
 * Related Posts addon with [Addon Template](https://github.com/horike37/wp-simple-related-posts-addon-template/)
+= 1.3 =
+* fixed bug on based tag and category
+* add pot file
