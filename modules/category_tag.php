@@ -40,18 +40,38 @@ class Simple_Related_Posts_Category_Tag extends Simple_Related_Posts_Base {
 			$num = $option['display_num'];
 		}
 
-		$q = "SELECT ID FROM $wpdb->posts AS p
-			INNER JOIN $wpdb->term_relationships AS tr ON (p.ID = tr.object_id)
-			INNER JOIN $wpdb->term_taxonomy AS tt ON (tr.term_taxonomy_id = tt.term_taxonomy_id)
-			WHERE ((tt.taxonomy = 'post_tag' AND tt.term_id IN ({$tag_list}))
-			OR (tt.taxonomy = 'category' AND tt.term_id IN ({$category_list})))
-			AND p.post_status = 'publish'
-			AND p.post_type = 'post'
-			AND p.ID != {$post_id}
-			GROUP BY tr.object_id
-			ORDER BY post_date DESC" . $wpdb->prepare( " LIMIT %d", $num );
-
-		return $wpdb->get_results( $q, ARRAY_A );
+		$args = array( 
+				'post_type' => 'post',
+				'posts_per_page' => $num,
+				'post__not_in' => array($post_id),
+				'orderby' => 'rand',
+				'tax_query' => array(
+								'relation' => 'AND',
+								array(
+									'taxonomy' => 'category',
+									'terms' => $categories,
+									'field' => 'term_id',
+									'operator' => 'IN',
+									),
+								array(
+									'taxonomy' => 'post_tag',
+									'terms' => $tags,
+									'field' => 'term_id',
+									'operator' => 'IN',
+									),
+							), 
+			);
+		$results = get_posts( $args );
+		
+		$results_array = array();
+		
+		if ( empty($results) )
+			return false;
+			
+		foreach ( $results as $result ) {
+			$results_array[]['ID'] = $result->ID;
+		}
+		return $results_array;
 	}
 	
 	
