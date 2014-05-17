@@ -60,7 +60,13 @@ class Simple_Related_Posts_Base {
 		
 		
 		$current_num = count($posts);
-		$display_num = intval($this->option['display_num']);
+		if ( $num == '' ) {
+			$option = get_option('sirp_options');
+			$display_num = intval($this->option['display_num']);
+		} else {
+			$display_num = intval($num);
+		}
+		
 		
 		if ( $current_num > $display_num ) {
 			$num = $current_num - $display_num;

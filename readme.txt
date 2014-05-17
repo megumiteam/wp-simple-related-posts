@@ -3,7 +3,7 @@ Contributors: horike,megumithemes
 Tags:  related posts,related
 Requires at least: 3.8.1
 Tested up to: 3.9
-Stable tag: 1.3
+Stable tag: 1.3.1
 
 Related Posts plugin. It's flexible and fast and simple.
 
@@ -14,9 +14,10 @@ Related Posts plugin. It's flexible and fast and simple.
 
 You can make addon to use [Addon Template](https://github.com/horike37/wp-simple-related-posts-addon-template/).
 
-
-
 = Translators =
+* Japanese(ja) - [Horike Takahiro](http://profiles.wordpress.org/horike)
+* Thai(th_TH) - [TG Knowledge](http://www.xn--12cg1cxchd0a2gzc1c5d5a.com)
+
 You can send your own language pack to me.
 
 Please contact to me.
@@ -47,3 +48,5 @@ gmail:horike37@gmail.com
 = 1.3 =
 * fixed bug on based tag and category
 * add pot file
+= 1.3.1 =
+* Thai support
