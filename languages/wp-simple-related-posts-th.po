@@ -1,0 +1,101 @@
+# Copyright (C) 2014 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-simple-related-posts\n"
+"POT-Creation-Date: 2014-05-06 13:52:26+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-05-17 02:03+0700\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: admin/meta_box.php:36
+msgid "Maximum number of Related Posts %d"
+msgstr "จำนวนมากที่สุดของบทความที่เกี่ยวข้อง %d"
+
+#: admin/meta_box.php:88 admin/options.php:62 modules/base.php:21
+#: simple-related-posts.php:49
+msgid "Related Posts"
+msgstr "บทความที่เกี่ยวข้อง"
+
+#: admin/meta_box.php:102
+msgid "Search..."
+msgstr "ค้นหา..."
+
+#: admin/meta_box.php:116
+msgid "Related Posts to display"
+msgstr "บทความที่เกี่ยวข้องที่จะแสดง"
+
+#: admin/meta_box.php:116
+msgid "Reset"
+msgstr "รีเซ็ต"
+
+#: admin/options.php:11 admin/options.php:18
+msgid "Simple Related Posts"
+msgstr "Simple Related Posts"
+
+#: admin/options.php:24
+msgid "save"
+msgstr "บันทึก"
+
+#: admin/options.php:33
+msgid "Configuration"
+msgstr "ตั้งค่า"
+
+#: admin/options.php:34
+msgid "Display method"
+msgstr "แสดงวิธีการ"
+
+#: admin/options.php:35
+msgid "Views"
+msgstr "ดู"
+
+#: admin/options.php:36
+msgid "Related Posts Title"
+msgstr "ชื่อเรื่องบทความที่เกี่ยวข้อง"
+
+#: admin/options.php:37
+msgid "Post Content"
+msgstr "เนื้อหาบทความ"
+
+#: admin/options.php:38
+msgid "Post Thumbnail"
+msgstr "รูปขนาดเล็กของบทความ"
+
+#: admin/options.php:39
+msgid "CSS"
+msgstr "CSS"
+
+#: admin/options.php:49
+msgid "View Related Posts based on tags"
+msgstr "ดูบทความที่เกี่ยวข้องโดยใช้ป้ายกำกับ"
+
+#: admin/options.php:50
+msgid "View Related Posts based on categoris"
+msgstr "ดูบทความที่เกี่ยวข้องโดยใช้หมวดหมู่"
+
+#: admin/options.php:51
+msgid "View Related Posts based on categoris and tag"
+msgstr "ดูบทความที่เกี่ยวข้องโดยใช้ป้ายกำกับและหมวดหมู่"
+
+#: admin/options.php:71
+msgid ""
+"Allow to display related posts at the end of the post content automatically"
+msgstr "อนุญาตให้แสดงบทความที่เกี่ยวข้อง ที่ตำแหน่งท้ายสุดของบทความโดยอัตโนมัติ"
+
+#: admin/options.php:77
+msgid "Allow to display a thumbnail to related posts"
+msgstr "อนุญาตให้แสดงรูปขนาดเล็กเพื่อลิ้งค์ไปยังเรื่องที่เกี่ยวข้อง"
+
+#: admin/options.php:83
+msgid "Use css"
+msgstr "ใช้ css"
+
+#: admin/options.php:89
+msgid ""
+"Allow to add related posts at the end of the RSS post content automatically"
+msgstr "อนุญาตให้เพิ่มบทความที่เกี่ยวข้อง ที่ตำแหน่งท้ายสุดของ RSS บทความโดยอัตโนมัติ"
