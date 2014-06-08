@@ -41,6 +41,10 @@ msgstr "Simple Related Posts"
 msgid "save"
 msgstr "保存"
 
+#: admin/options.php:34
+msgid "Initialize"
+msgstr "初期化"
+
 #: admin/options.php:33
 msgid "Configuration"
 msgstr "設定"
@@ -73,6 +77,14 @@ msgstr "CSS"
 msgid "View Related Posts based on tags"
 msgstr "タグをベースに関連記事を表示"
 
+#: admin/options.php:51
+msgid "Initialize Related Posts"
+msgstr "関連記事の初期化"
+
+#: admin/options.php:59
+msgid "<p>Click the button below when you change <strong>Display method</strong>, please initialize the all posts Related Posts.<br />Updated Related Posts on how to change after existing posts Related Posts.</p>"
+msgstr "<p>関連記事の<strong>表示方法</strong>を変更した際は以下のボタンをクリックして、全記事の関連記事を初期化してください。<br />既存記事の関連記事が変更後の表示方法での関連記事に更新されます。</p>"
+
 #: admin/options.php:50
 msgid "View Related Posts based on categoris"
 msgstr "カテゴリをベースに関連記事を表示"
@@ -98,3 +110,11 @@ msgstr "CSSを適用する"
 msgid ""
 "Allow to add related posts at the end of the RSS post content automatically"
 msgstr "RSSフィードに関連記事を自動で表示する"
+
+#: admin/options.php:138
+msgid "Initialize success"
+msgstr "初期化に成功しました"
+
+#: admin/options.php:141
+msgid "Initialize failed"
+msgstr "初期化に失敗しました"

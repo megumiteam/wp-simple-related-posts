@@ -14,14 +14,17 @@ function sirp_default_before_post_title($html, $post_id) {
 	return $html; 
 }
 
-add_action( 'wp_enqueue_scripts', 'sirp_add_stylesheet' );
+add_action( 'wp_head', 'sirp_add_stylesheet' );
 function sirp_add_stylesheet() {
 	$options = get_option( 'sirp_options' );
 	if ( !isset($options['original_css']) || $options['original_css'] != 1 ) 
 		return;
 
-	wp_register_style( 'sirp-style', plugins_url('../css/simple-related-posts.css', __FILE__) );
-	wp_enqueue_style( 'sirp-style' );
+?>
+<style type="text/css">
+<?php echo $options['original_css_content']; ?>
+</style>
+<?php
 }
 
 add_filter( 'sirp_title', 'sirp_title' );

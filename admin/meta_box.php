@@ -27,8 +27,8 @@ class Simple_Related_Posts_Admin_Meta_Box {
     public function admin_enqueue_scripts() {
         wp_register_style( 'sipr-admin-css', SIRP_PLUGIN_URL . '/css/style.css', array(), date('YmdHis', filemtime(SIRP_PLUGIN_DIR . '/css/style.css')) );
         wp_enqueue_style( 'sipr-admin-css' );
-        wp_register_script( 'sipr-admin-js', SIRP_PLUGIN_URL . '/js/common.js', array(), date('YmdHis', filemtime(SIRP_PLUGIN_DIR . '/js/common.js')) );
-        wp_enqueue_script( 'sipr-admin-js' );
+        wp_register_script( 'sipr-admin-post-js', SIRP_PLUGIN_URL . '/js/admin-post.js', array(), date('YmdHis', filemtime(SIRP_PLUGIN_DIR . '/js/admin-post.js')) );
+        wp_enqueue_script( 'sipr-admin-post-js' );
         wp_register_script( 'sipr-color-js', SIRP_PLUGIN_URL . '/js/jquery.color.js', array(), date('YmdHis', filemtime(SIRP_PLUGIN_DIR . '/js/jquery.color.js')) );
         wp_enqueue_script( 'sipr-color-js' );
 		wp_enqueue_script( 'jquery-ui-sortable' );

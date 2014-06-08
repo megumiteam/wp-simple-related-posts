@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  \n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-simple-related-posts\n"
-"POT-Creation-Date: 2014-05-06 13:52:26+00:00\n"
+"POT-Creation-Date: 2014-06-08 09:24:23+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,8 +16,8 @@ msgstr ""
 msgid "Maximum number of Related Posts %d"
 msgstr ""
 
-#: admin/meta_box.php:88 admin/options.php:62 modules/base.php:21
-#: simple-related-posts.php:49
+#: admin/meta_box.php:88 admin/options.php:80 modules/base.php:21
+#: simple-related-posts.php:76
 msgid "Related Posts"
 msgstr ""
 
@@ -33,68 +33,91 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: admin/options.php:11 admin/options.php:18
+#: admin/options.php:17 admin/options.php:24
 msgid "Simple Related Posts"
 msgstr ""
 
-#: admin/options.php:24
+#: admin/options.php:29
 msgid "save"
 msgstr ""
 
-#: admin/options.php:33
+#: admin/options.php:34
+msgid "Initialize"
+msgstr ""
+
+#: admin/options.php:43
 msgid "Configuration"
 msgstr ""
 
-#: admin/options.php:34
+#: admin/options.php:44
 msgid "Display method"
 msgstr ""
 
-#: admin/options.php:35
+#: admin/options.php:45
 msgid "Views"
 msgstr ""
 
-#: admin/options.php:36
+#: admin/options.php:46
 msgid "Related Posts Title"
 msgstr ""
 
-#: admin/options.php:37
+#: admin/options.php:47
 msgid "Post Content"
 msgstr ""
 
-#: admin/options.php:38
+#: admin/options.php:48
 msgid "Post Thumbnail"
 msgstr ""
 
-#: admin/options.php:39
+#: admin/options.php:49
 msgid "CSS"
 msgstr ""
 
-#: admin/options.php:49
+#: admin/options.php:51
+msgid "Initialize Related Posts"
+msgstr ""
+
+#: admin/options.php:59
+msgid ""
+"<p>Click the button below when you change <strong>Display method</strong>, "
+"please initialize the all posts Related Posts.<br />Updated Related Posts on "
+"how to change after existing posts Related Posts.</p>"
+msgstr ""
+
+#: admin/options.php:67
 msgid "View Related Posts based on tags"
 msgstr ""
 
-#: admin/options.php:50
+#: admin/options.php:68
 msgid "View Related Posts based on categoris"
 msgstr ""
 
-#: admin/options.php:51
+#: admin/options.php:69
 msgid "View Related Posts based on categoris and tag"
-msgstr ""
-
-#: admin/options.php:71
-msgid ""
-"Allow to display related posts at the end of the post content automatically"
-msgstr ""
-
-#: admin/options.php:77
-msgid "Allow to display a thumbnail to related posts"
-msgstr ""
-
-#: admin/options.php:83
-msgid "Use css"
 msgstr ""
 
 #: admin/options.php:89
 msgid ""
+"Allow to display related posts at the end of the post content automatically"
+msgstr ""
+
+#: admin/options.php:95
+msgid "Allow to display a thumbnail to related posts"
+msgstr ""
+
+#: admin/options.php:101
+msgid "Use css"
+msgstr ""
+
+#: admin/options.php:108
+msgid ""
 "Allow to add related posts at the end of the RSS post content automatically"
+msgstr ""
+
+#: admin/options.php:138
+msgid "Initialize success"
+msgstr ""
+
+#: admin/options.php:141
+msgid "Initialize failed"
 msgstr ""

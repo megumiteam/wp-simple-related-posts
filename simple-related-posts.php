@@ -38,8 +38,34 @@ if ( ! defined( 'SIRP_PLUGIN_DIR' ) )
 
 load_plugin_textdomain( SIRP_DOMAIN, false, dirname(plugin_basename(__FILE__)) . '/languages' );
 
-add_action( 'admin_init', 'simple_related_posts_install' );
+//add_action( 'admin_init', 'simple_related_posts_install' );
 function simple_related_posts_install() {
+	$css = <<<EOM
+.simple-related-posts {
+	list-style: none;
+}
+
+.simple-related-posts * {
+	margin:0;
+	padding:0;
+}
+
+.simple-related-posts li {
+	margin-bottom: 10px;
+}
+
+.simple-related-posts li a {
+	display: block;
+}
+.simple-related-posts li a p {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.simple-related-posts li .thumb {
+	padding-right: 10px;
+}
+EOM;
 	if ( !get_option('simple_related_posts_installed') ) {
 		$args = array(
 			'target'       => 'Simple_Related_Posts_Tag',
@@ -48,10 +74,17 @@ function simple_related_posts_install() {
 			'post_thumbnail'   => 1,
 			'title' => __('Related Posts', SIRP_DOMAIN ),
 			'original_css' => 1,
+			'original_css_content' => $css,
 			'rss_post_content' => ''
 		);
 		update_option('sirp_options', $args);
 		update_option('simple_related_posts_installed', 1);
+	} else {
+		$option = get_option('sirp_options');
+		if ( !array_key_exists( 'original_css_content', $option ) ) {
+			$option['original_css_content'] = $css;
+			update_option('sirp_options', $option);
+		}
 	}
 }
 
