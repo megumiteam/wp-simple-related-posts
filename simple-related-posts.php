@@ -4,7 +4,7 @@ Plugin Name: WP Simple Related Posts
 Plugin URI: http://www.kakunin-pl.us/
 Description: Display Related Posts. Very Simple.
 Author: horike takahiro
-Version: 1.3.1
+Version: 1.4
 Author URI: http://www.kakunin-pl.us/
 Text Domain: simple-related-posts
 Domain Path: /languages/
@@ -38,7 +38,7 @@ if ( ! defined( 'SIRP_PLUGIN_DIR' ) )
 
 load_plugin_textdomain( SIRP_DOMAIN, false, dirname(plugin_basename(__FILE__)) . '/languages' );
 
-//add_action( 'admin_init', 'simple_related_posts_install' );
+add_action( 'admin_init', 'simple_related_posts_install' );
 function simple_related_posts_install() {
 	$css = <<<EOM
 .simple-related-posts {
