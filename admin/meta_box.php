@@ -32,7 +32,7 @@ class Simple_Related_Posts_Admin_Meta_Box {
         wp_register_script( 'sipr-color-js', SIRP_PLUGIN_URL . '/js/jquery.color.js', array(), date('YmdHis', filemtime(SIRP_PLUGIN_DIR . '/js/jquery.color.js')) );
         wp_enqueue_script( 'sipr-color-js' );
 		wp_enqueue_script( 'jquery-ui-sortable' );
-		wp_localize_script( 'sipr-admin-js', 'objectL10n', array(
+		wp_localize_script( 'sipr-admin-post-js', 'objectL10n', array(
 			'alert' => __( 'Maximum number of Related Posts %d', SIRP_DOMAIN ),
 		) );
     }
