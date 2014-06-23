@@ -9,7 +9,10 @@ class Simple_Related_Posts_Base {
 	}
 	
 	public function the_content( $content ) {
-		return $content.$this->get_reloated_posts();
+		if ( is_single() )
+			return $content.$this->get_reloated_posts();
+			
+		return $content;
 	}
 
 	public function get_reloated_posts( $num = '' ) {
@@ -58,7 +61,6 @@ class Simple_Related_Posts_Base {
 			$posts_ids[]['ID'] = $id;
 		}
 		
-		
 		$current_num = count($posts);
 		if ( $num == '' ) {
 			$option = get_option('sirp_options');
@@ -67,21 +69,12 @@ class Simple_Related_Posts_Base {
 			$display_num = intval($num);
 		}
 		
-		
 		if ( $current_num > $display_num ) {
 			$num = $current_num - $display_num;
 			for ($i = 0; $i < $num; $i++) {
 				array_pop($posts_ids);
 			}
 			return $posts_ids;
-		} elseif ( $current_num < $display_num ) {
-			$num = $display_num - $current_num;
-			$posts = $this->get_data_original( $num );
-			if ( !$posts ) {
-				return $posts_ids;
-			} else {
-				return array_merge($posts_ids, $posts);
-			}
 		} else {
 			return $posts_ids;
 		}	

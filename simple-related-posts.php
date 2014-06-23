@@ -4,7 +4,7 @@ Plugin Name: WP Simple Related Posts
 Plugin URI: http://www.kakunin-pl.us/
 Description: Display Related Posts. Very Simple.
 Author: horike takahiro
-Version: 1.4
+Version: 1.4.1
 Author URI: http://www.kakunin-pl.us/
 Text Domain: simple-related-posts
 Domain Path: /languages/
