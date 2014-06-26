@@ -3,7 +3,7 @@ Contributors: horike,megumithemes
 Tags:  related posts,related
 Requires at least: 3.8.1
 Tested up to: 3.9
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 
 Related Posts plugin. It's flexible and fast and simple.
 
@@ -54,4 +54,6 @@ gmail:horike37@gmail.com
 * Edit CSS on Admin panel.
 * With a function to initialize the Related Posts.
 = 1.4.1 =
+* Bug fix
+= 1.4.2 =
 * Bug fix

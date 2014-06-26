@@ -39,6 +39,8 @@ class Simple_Related_Posts_Base {
 		if ( !$related_posts )
 			$related_posts = $this->get_data_original($num, get_the_ID());
 			
+		$related_posts = array_unique( $related_posts, SORT_REGULAR );
+			
 		return $related_posts;
 	}
 
