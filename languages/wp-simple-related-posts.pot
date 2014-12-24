@@ -1,10 +1,10 @@
-# Copyright (C) 2014 
-# This file is distributed under the same license as the  package.
+# Copyright (C) 2014 WP Simple Related Posts
+# This file is distributed under the same license as the WP Simple Related Posts package.
 msgid ""
 msgstr ""
-"Project-Id-Version:  \n"
+"Project-Id-Version: WP Simple Related Posts 1.4.4\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-simple-related-posts\n"
-"POT-Creation-Date: 2014-06-08 09:24:23+00:00\n"
+"POT-Creation-Date: 2014-12-24 08:01:05+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,28 +12,28 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: admin/meta_box.php:36
+#: admin/meta_box.php:37
 msgid "Maximum number of Related Posts %d"
 msgstr ""
 
-#: admin/meta_box.php:88 admin/options.php:80 modules/base.php:21
-#: simple-related-posts.php:76
+#: admin/meta_box.php:89 admin/options.php:80 modules/base.php:24
+#: wp-simple-related-posts.php:75
 msgid "Related Posts"
 msgstr ""
 
-#: admin/meta_box.php:102
+#: admin/meta_box.php:103
 msgid "Search..."
 msgstr ""
 
-#: admin/meta_box.php:116
+#: admin/meta_box.php:117
 msgid "Related Posts to display"
 msgstr ""
 
-#: admin/meta_box.php:116
+#: admin/meta_box.php:117
 msgid "Reset"
 msgstr ""
 
-#: admin/options.php:17 admin/options.php:24
+#: admin/options.php:17 admin/options.php:24 modules/widget.php:15
 msgid "Simple Related Posts"
 msgstr ""
 
@@ -120,4 +120,39 @@ msgstr ""
 
 #: admin/options.php:141
 msgid "Initialize failed"
+msgstr ""
+
+#: modules/widget.php:11
+msgid "Displays related posts."
+msgstr ""
+
+#: modules/widget.php:30
+msgid "Title: <br />"
+msgstr ""
+
+#: modules/widget.php:43
+msgid "Count: <br />"
+msgstr ""
+
+#: modules/widget.php:45
+msgid "<br />Default: 5"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WP Simple Related Posts"
+msgstr ""
+
+#. #-#-#-#-#  wp-simple-related-posts.pot (WP Simple Related Posts 1.4.4)  #-#-#-#-#
+#. Plugin URI of the plugin/theme
+#. #-#-#-#-#  wp-simple-related-posts.pot (WP Simple Related Posts 1.4.4)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://www.kakunin-pl.us/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Display Related Posts. Very Simple."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "horike takahiro"
 msgstr ""
