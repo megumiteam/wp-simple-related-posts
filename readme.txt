@@ -2,8 +2,8 @@
 Contributors: horike,megumithemes
 Tags:  related posts,related
 Requires at least: 3.8.1
-Tested up to: 3.9.2
-Stable tag: 1.4.4
+Tested up to: 4.1
+Stable tag: 1.5
 
 Related Posts plugin. It's flexible and fast and simple.
 
@@ -13,6 +13,11 @@ Related Posts plugin. It's flexible and fast and simple.
 *I can be added as an add-on another related posts algorithm.
 
 You can make addon to use [Addon Template](https://github.com/horike37/wp-simple-related-posts-addon-template/).
+
+You can use JSON REST API Endpoint. Require plugin [JSON REST API](https://wordpress.org/plugins/json-rest-api/)
+`http://example.com/wp-json/posts/%post_id%/sirp_related/`
+`http://example.com/wp-json/sirp_related/%post_id%/`
+`http://example.com/wp-json/sirp_related/%post_id%/?filter[num]=5`
 
 = Translators =
 * Japanese(ja) - [Horike Takahiro](http://profiles.wordpress.org/horike)
@@ -25,7 +30,8 @@ Please contact to me.
 gmail:horike37@gmail.com
 
 = Contributors =
-* Horike Takahiro
+- @[ShinichiN](https://profiles.wordpress.org/shinichin)
+- @[Webnist](https://profiles.wordpress.org/webnist)
 
 == Installation ==
 1. Upload `simple-related-posts` to the `/wp-content/plugins/` directory.
@@ -61,3 +67,6 @@ gmail:horike37@gmail.com
 * Bug fix
 = 1.4.4 =
 * Bug fix
+= 1.5 =
+* Add Json Rest API Endpoint
+* Add Widget

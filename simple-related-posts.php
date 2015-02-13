@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: WP Simple Related Posts
-Plugin URI: http://www.kakunin-pl.us/
+Plugin URI: https://github.com/horike37/Simple-Related-Posts
 Description: Display Related Posts. Very Simple.
 Author: horike takahiro
-Version: 1.4.4
-Author URI: http://www.kakunin-pl.us/
+Version: 1.5
+Author URI: https://github.com/horike37/Simple-Related-Posts
 Text Domain: simple-related-posts
 Domain Path: /languages/
 
