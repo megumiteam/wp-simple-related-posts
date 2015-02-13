@@ -19,7 +19,7 @@ class WP_JSON_SIRP extends WP_JSON_Posts {
 		$ids        = sirp_get_related_posts_id_api( $num, $id );
 		$posts_list = array();
 		foreach ( $ids as $id ) {
-			$posts_list[] = get_post( $id );
+			$posts_list[] = get_post( $id['ID'] );
 		}
 		$response = new WP_JSON_Response();
 
