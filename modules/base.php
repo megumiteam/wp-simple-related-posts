@@ -44,8 +44,19 @@ class Simple_Related_Posts_Base {
 			
 		return $related_posts;
 	}
+	
+	public function get_data_api( $num = '', $post_id = null ) {
+		$related_posts = $this->get_data_post_meta($num, $post_id);
+		if ( !$related_posts )
+			$related_posts = $this->get_data_original($num, $post_id);
 
-	public function get_data_post_meta( $num = '', $posts_id = null ) {
+		if ( is_array($related_posts) )
+			$related_posts = array_unique( $related_posts, SORT_REGULAR );
+			
+		return $related_posts;
+	}
+
+	public function get_data_post_meta( $num = '', $post_id = null ) {
 		global $post;
 		
 		if ( !isset( $post_id ) )

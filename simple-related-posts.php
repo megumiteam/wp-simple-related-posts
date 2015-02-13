@@ -124,7 +124,11 @@ class Simple_Related_Posts {
 	
 	public function get_data($num = '') {
 		return $this->related->get_data($num);
-	} 
+	}
+	
+	public function get_data_api( $num = '', $post_id = null ) {
+		return $this->related->get_data_api($num, $post_id);
+	}
 }
 
 $simple_related_posts = new Simple_Related_Posts();
