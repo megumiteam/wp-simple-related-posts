@@ -23,3 +23,7 @@ You can make addon to use [Addon Template](https://github.com/horike37/wp-simple
 - @param $display_num int Number of acquisitions.
 - @param $post_id int post_id.
 - @return array Related Posts IDs.
+
+# Contributors
+- @[ShinichiNishikawa](https://github.com/ShinichiNishikawa)
+- @[Webnist](https://github.com/Webnist)
