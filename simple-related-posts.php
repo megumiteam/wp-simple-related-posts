@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
 Plugin Name: WP Simple Related Posts
 Plugin URI: http://www.kakunin-pl.us/
@@ -29,7 +29,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 if ( ! defined( 'SIRP_DOMAIN' ) )
 	define( 'SIRP_DOMAIN', 'wp-simple-related-posts' );
-	
+
 if ( ! defined( 'SIRP_PLUGIN_URL' ) )
 	define( 'SIRP_PLUGIN_URL', plugins_url() . '/' . dirname( plugin_basename( __FILE__ ) ));
 
@@ -90,7 +90,7 @@ EOM;
 
 class Simple_Related_Posts {
 	private $related = '';
-	
+
 	public function __construct() {
 		$this->requirements();
 		$option = get_option('sirp_options');
@@ -98,7 +98,7 @@ class Simple_Related_Posts {
 			$this->related = new $option['target'];
 		}
 	}
-		
+
 	private function requirements() {
 		require_once(SIRP_PLUGIN_DIR . '/modules/base.php');
 
@@ -117,18 +117,29 @@ class Simple_Related_Posts {
 		}
 		do_action( 'sirp_addon_requirement' );
 	}
-	
+
 	public function get_data_original($num = '') {
 		return $this->related->get_data_original($num);
-	} 
-	
+	}
+
 	public function get_data($num = '') {
 		return $this->related->get_data($num);
 	}
-	
+
 	public function get_data_api( $num = '', $post_id = null ) {
 		return $this->related->get_data_api($num, $post_id);
 	}
 }
 
 $simple_related_posts = new Simple_Related_Posts();
+
+if ( is_plugin_active( 'json-rest-api/plugin.php' ) && ( '3.9.2' <= get_bloginfo( 'version' ) && '4.2' > get_bloginfo( 'version' ) ) ) {
+	require_once( SIRP_PLUGIN_DIR . '/modules/wp-rest-api.php' );
+
+	function sirp_json_api_related_filters( $server ) {
+		// Related
+		$wp_json_related = new WP_JSON_SIRP( $server );
+		add_filter( 'json_endpoints', array( $wp_json_related, 'register_routes' ), 1 );
+	}
+	add_action( 'wp_json_server_before_serve', 'sirp_json_api_related_filters', 10, 1 );
+}
