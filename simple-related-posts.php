@@ -4,7 +4,7 @@ Plugin Name: WP Simple Related Posts
 Plugin URI: https://github.com/horike37/Simple-Related-Posts
 Description: Display Related Posts. Very Simple.
 Author: horike takahiro
-Version: 1.5
+Version: 1.5.1
 Author URI: https://github.com/horike37/Simple-Related-Posts
 Text Domain: simple-related-posts
 Domain Path: /languages/
@@ -100,11 +100,11 @@ class Simple_Related_Posts {
 	}
 
 	private function requirements() {
-		require_once(SIRP_PLUGIN_DIR . '/modules/base.php');
+		require_once(dirname(  __FILE__ ) . '/modules/base.php');
 
 		$sirp_dirs = array(
-			SIRP_PLUGIN_DIR . '/admin/',
-			SIRP_PLUGIN_DIR . '/modules/'
+			dirname(  __FILE__ ) . '/admin/',
+			dirname(  __FILE__ ) . '/modules/'
 		);
 		foreach ( $sirp_dirs as $dir ) {
 			opendir($dir);
@@ -135,7 +135,7 @@ $simple_related_posts = new Simple_Related_Posts();
 
 require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 if ( is_plugin_active( 'json-rest-api/plugin.php' ) && ( '3.9.2' <= get_bloginfo( 'version' ) && '4.2' > get_bloginfo( 'version' ) ) ) {
-	require_once( SIRP_PLUGIN_DIR . '/lib/wp-rest-api.php' );
+	require_once( dirname(  __FILE__ ) . '/lib/wp-rest-api.php' );
 
 	function sirp_json_api_related_filters( $server ) {
 		// Related

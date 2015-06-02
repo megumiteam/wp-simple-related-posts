@@ -26,11 +26,11 @@ class Simple_Related_Posts_Admin_Meta_Box {
 	}
 
     public function admin_enqueue_scripts() {
-        wp_register_style( 'sipr-admin-css', SIRP_PLUGIN_URL . '/css/style.css', array(), date('YmdHis', filemtime(SIRP_PLUGIN_DIR . '/css/style.css')) );
+        wp_register_style( 'sipr-admin-css', SIRP_PLUGIN_URL . '/css/style.css', array(), date('YmdHis', filemtime(dirname( __FILE__ ) . '/../css/style.css')) );
         wp_enqueue_style( 'sipr-admin-css' );
-        wp_register_script( 'sipr-admin-post-js', SIRP_PLUGIN_URL . '/js/admin-post.js', array(), date('YmdHis', filemtime(SIRP_PLUGIN_DIR . '/js/admin-post.js')) );
+        wp_register_script( 'sipr-admin-post-js', SIRP_PLUGIN_URL . '/js/admin-post.js', array(), date('YmdHis', filemtime(dirname( __FILE__ ) . '/../js/admin-post.js')) );
         wp_enqueue_script( 'sipr-admin-post-js' );
-        wp_register_script( 'sipr-color-js', SIRP_PLUGIN_URL . '/js/jquery.color.js', array(), date('YmdHis', filemtime(SIRP_PLUGIN_DIR . '/js/jquery.color.js')) );
+        wp_register_script( 'sipr-color-js', SIRP_PLUGIN_URL . '/js/jquery.color.js', array(), date('YmdHis', filemtime(dirname( __FILE__ ) . '/../js/jquery.color.js')) );
         wp_enqueue_script( 'sipr-color-js' );
 		wp_enqueue_script( 'jquery-ui-sortable' );
 		wp_localize_script( 'sipr-admin-post-js', 'objectL10n', array(
@@ -146,7 +146,7 @@ class Simple_Related_Posts_Admin_Meta_Box {
 	public function search($s) {
 		global $wpdb;
 
-		$sql = $wpdb->prepare( "SELECT SQL_CALC_FOUND_ROWS ID FROM " . $wpdb->posts . " WHERE (((post_title LIKE '%%%s%%') OR (post_content LIKE '%%%s%%'))) AND wp_posts.post_type = 'post' AND post_status = 'publish' ORDER BY post_title LIKE '%%%s%%' DESC, post_date DESC LIMIT 0, 10", $s, $s, $s );
+		$sql = $wpdb->prepare( "SELECT SQL_CALC_FOUND_ROWS ID FROM " . $wpdb->posts . " WHERE (((post_title LIKE '%%%s%%') OR (post_content LIKE '%%%s%%'))) AND " . $wpdb->posts .".post_type = 'post' AND post_status = 'publish' ORDER BY post_title LIKE '%%%s%%' DESC, post_date DESC LIMIT 0, 10", $s, $s, $s );
 		
 		return $wpdb->get_results($sql);
 	}
