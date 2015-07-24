@@ -60,9 +60,11 @@ public function widget( $args, $par ) {
 
 		$count = ( isset( $par['pcount'] ) && $par['pcount'] ) ? (int)$par['pcount'] : 5;
 		echo $args['before_widget'];
-		echo $args['before_title'];
-		echo esc_html( $par['title'] );
-		echo $args['after_title'];
+		if ( $par['title'] ) {
+			echo $args['before_title'];
+			echo esc_html( $par['title'] );
+			echo $args['after_title'];
+		}
 		echo '<ul>';
 		$p_arr = array();
 		global $simple_related_posts;
