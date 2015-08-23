@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Simple Related Posts\n"
-"POT-Creation-Date: 2014-12-24 15:21+0700\n"
-"PO-Revision-Date: 2014-12-24 15:26+0700\n"
+"POT-Creation-Date: 2015-08-23 17:33+0700\n"
+"PO-Revision-Date: 2015-08-23 17:33+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -18,25 +18,25 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/meta_box.php:37
+#: admin/meta_box.php:41
 #, php-format
 msgid "Maximum number of Related Posts %d"
 msgstr "関連記事の上限は%d個です"
 
-#: admin/meta_box.php:89 admin/options.php:80 modules/base.php:24
-#: wp-simple-related-posts.php:75
+#: admin/meta_box.php:93 admin/options.php:80 modules/base.php:24
+#: simple-related-posts.php:75
 msgid "Related Posts"
 msgstr "関連記事"
 
-#: admin/meta_box.php:103
+#: admin/meta_box.php:107
 msgid "Search..."
 msgstr "検索..."
 
-#: admin/meta_box.php:117
+#: admin/meta_box.php:121
 msgid "Related Posts to display"
 msgstr "表示される関連記事"
 
-#: admin/meta_box.php:117
+#: admin/meta_box.php:121
 msgid "Reset"
 msgstr "リセット"
 
@@ -147,3 +147,7 @@ msgstr "投稿数： <br />"
 #: modules/widget.php:45
 msgid "<br />Default: 5"
 msgstr "<br />デフォルト： 5"
+
+#: modules/widget.php:94
+msgid "No related posts."
+msgstr "関連記事はありません。"

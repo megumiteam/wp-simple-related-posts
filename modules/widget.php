@@ -65,28 +65,35 @@ public function widget( $args, $par ) {
 			echo esc_html( $par['title'] );
 			echo $args['after_title'];
 		}
-		echo '<ul>';
 		$p_arr = array();
 		global $simple_related_posts;
-		foreach ( $simple_related_posts->get_data() as $p ) {
-			$p_arr[] = $p['ID'];
-		}
-		$p_args = array(
-			'post_type'      => 'post',
-			'posts_per_page' => $count,
-			'no_found_rows'  => true,
-			'post__in'       => $p_arr,
-		);
-		$p_args = apply_filters( 'sirp_query_args', $p_args );
-		$my_query = new WP_Query( $p_args );
-		while ( $my_query->have_posts() ):
-			$my_query->the_post();
+		$post_data = $simple_related_posts->get_data();
+		if ( $post_data ) {
+			echo '<ul>';
+			foreach ( $simple_related_posts->get_data() as $p ) {
+				$p_arr[] = $p['ID'];
+			}
+			$p_args = array(
+				'post_type'      => 'post',
+				'posts_per_page' => $count,
+				'no_found_rows'  => true,
+				'post__in'       => $p_arr,
+			);
+			$p_args = apply_filters( 'sirp_query_args', $p_args );
+			$my_query = new WP_Query( $p_args );
+			while ( $my_query->have_posts() ):
+				$my_query->the_post();
+				?>
+				<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+				<?php
+			endwhile;
+			wp_reset_postdata();
+			echo '</ul>';
+		} else {
 			?>
-			<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+			<p class="no-related-posts"><?php _e( 'No related posts.', SIRP_DOMAIN ); ?></p>
 			<?php
-		endwhile;
-		wp_reset_postdata();
-		echo '</ul>';
+		}
 		echo $args['after_widget'];
 
 	}
