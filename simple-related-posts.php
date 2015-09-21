@@ -134,7 +134,7 @@ class Simple_Related_Posts {
 $simple_related_posts = new Simple_Related_Posts();
 
 require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-if ( is_plugin_active( 'json-rest-api/plugin.php' ) && ( '3.9.2' <= get_bloginfo( 'version' ) && '4.2' > get_bloginfo( 'version' ) ) ) {
+if ( is_plugin_active( 'json-rest-api/plugin.php' ) && ( '3.9.2' <= get_bloginfo( 'version' ) ) ) {
 	require_once( dirname(  __FILE__ ) . '/lib/wp-rest-api.php' );
 
 	function sirp_json_api_related_filters( $server ) {
