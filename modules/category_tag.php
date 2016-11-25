@@ -46,6 +46,7 @@ class Simple_Related_Posts_Category_Tag extends Simple_Related_Posts_Base {
 				'posts_per_page' => $num,
 				'post__not_in' => array($post_id),
 				'orderby' => 'rand',
+				'has_password' => false,
 				'tax_query' => array(
 								'relation' => 'AND',
 								array(

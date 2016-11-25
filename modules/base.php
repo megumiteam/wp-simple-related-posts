@@ -72,7 +72,8 @@ class Simple_Related_Posts_Base {
 		
 		$posts_ids = array();
 		foreach ( $posts as $id ) {
-			if ( get_post($id)->post_status === 'publish' ) {
+			$my_post = get_post($id);
+			if ( $my_post->post_status === 'publish' && empty($my_post->post_password) ) {
 				$posts_ids[]['ID'] = $id;
 			}
 		}

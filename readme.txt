@@ -3,7 +3,7 @@ Contributors: horike,megumithemes
 Tags:  related posts,related
 Requires at least: 3.8.1
 Tested up to: 4.6.1
-Stable tag: 1.5.3
+Stable tag: 1.5.4
 
 Related Posts plugin. It's flexible and fast and simple.
 
@@ -76,3 +76,5 @@ gmail:horike37@gmail.com
 * stop save when running AUTO SAVE
 = 1.5.3 =
 * Show only posts publish status
+= 1.5.4 =
+* Exclude posts password protected

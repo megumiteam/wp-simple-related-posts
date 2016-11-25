@@ -34,6 +34,7 @@ class Simple_Related_Posts_Category extends Simple_Related_Posts_Base {
 			AND p.post_status = 'publish'
 			AND p.post_type = 'post'
 			AND p.ID != {$post_id}
+			AND p.post_password = ''
 			GROUP BY tr.object_id
 			ORDER BY post_date DESC" . $wpdb->prepare( " LIMIT %d", $num );
 
