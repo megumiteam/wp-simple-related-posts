@@ -42,6 +42,7 @@ class Simple_Related_Posts_Category_Tag extends Simple_Related_Posts_Base {
 
 		$args = array( 
 				'post_type' => 'post',
+				'post_status' => 'publish',
 				'posts_per_page' => $num,
 				'post__not_in' => array($post_id),
 				'orderby' => 'rand',

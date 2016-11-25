@@ -72,7 +72,9 @@ class Simple_Related_Posts_Base {
 		
 		$posts_ids = array();
 		foreach ( $posts as $id ) {
-			$posts_ids[]['ID'] = $id;
+			if ( get_post($id)->post_status === 'publish' ) {
+				$posts_ids[]['ID'] = $id;
+			}
 		}
 		
 		$current_num = count($posts);

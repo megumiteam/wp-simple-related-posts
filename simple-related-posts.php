@@ -4,13 +4,13 @@ Plugin Name: WP Simple Related Posts
 Plugin URI: https://github.com/horike37/Simple-Related-Posts
 Description: Display Related Posts. Very Simple.
 Author: horike takahiro
-Version: 1.5.1
+Version: 1.5.3
 Author URI: https://github.com/horike37/Simple-Related-Posts
 Text Domain: simple-related-posts
 Domain Path: /languages/
 
 
-Copyright 2014 horike takahiro (email : horike37@gmail.com)
+Copyright 2016 horike takahiro (email : horike37@gmail.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
