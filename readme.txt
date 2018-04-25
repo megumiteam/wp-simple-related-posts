@@ -1,5 +1,5 @@
 === WP Simple Related Posts ===
-Contributors: horike,megumithemes
+Contributors: horike,amimotoami,webnist,wokamoto,gatespace,mt8biz
 Tags:  related posts,related
 Requires at least: 3.8.1
 Tested up to: 4.6.1
