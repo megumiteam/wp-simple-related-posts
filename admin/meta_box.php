@@ -23,6 +23,9 @@ class Simple_Related_Posts_Admin_Meta_Box {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
 		}
+		if ( wp_doing_cron() ) {
+			return;
+		}
 
 		if ( isset($_POST['simple_related_posts']) && is_array($_POST['simple_related_posts'])) {
 			update_post_meta( $post_id, 'simple_related_posts', $_POST['simple_related_posts'] );
