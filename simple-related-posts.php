@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: WP Simple Related Posts
-Plugin URI: https://github.com/horike37/Simple-Related-Posts
+Plugin URI: https://github.com/megumiteam/wp-simple-related-posts
 Description: Display Related Posts. Very Simple.
 Author: digitalcube
 Version: 1.5.6
-Author URI: https://github.com/horike37/Simple-Related-Posts
+Author URI: https://github.com/megumiteam/wp-simple-related-posts
 Text Domain: simple-related-posts
 Domain Path: /languages/
 
