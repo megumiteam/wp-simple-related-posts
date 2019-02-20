@@ -2,8 +2,8 @@
 Contributors: horike,amimotoami,webnist,wokamoto,gatespace,mt8biz
 Tags:  related posts,related
 Requires at least: 3.8.1
-Tested up to: 4.9.8
-Stable tag: 1.5.6
+Tested up to: 5.0.3
+Stable tag: 1.5.7
 
 Related Posts plugin. It's flexible and fast and simple.
 
@@ -82,3 +82,5 @@ gmail:horike37@gmail.com
 * Bug fix
 = 1.5.6 =
 * fix Skip processing at wp-cron, such as when publishing a future post
+= 1.5.7 =
+* Fixed warning errors
