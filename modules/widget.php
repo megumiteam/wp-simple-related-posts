@@ -2,11 +2,13 @@
 
 add_action(
 	'widgets_init',
-	create_function( '', 'return register_widget( "Simple_Related_Posts_Widget" );' )
+	function() {
+		return register_widget( "Simple_Related_Posts_Widget" );
+	}
 );
- 
+
 class Simple_Related_Posts_Widget extends WP_Widget {
- 
+
 function __construct() {
 	$widget_ops  = array( 'description' => __( 'Displays related posts.', SIRP_DOMAIN ) );
 	$control_ops = array();
@@ -17,7 +19,7 @@ function __construct() {
 		$control_ops
 	);
 }
- 
+
 public function form( $par ) {
 
 	// Title
@@ -47,11 +49,11 @@ public function form( $par ) {
 	</p>
 	<?php
 }
- 
+
 public function update( $new_instance, $old_instance ) {
 	return $new_instance;
 }
- 
+
 public function widget( $args, $par ) {
 
 	$if_show_widget = apply_filters( 'sirp_if_show_widget', is_single() );
