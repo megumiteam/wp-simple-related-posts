@@ -2,8 +2,8 @@
 Contributors: horike,amimotoami,webnist,wokamoto,gatespace,mt8biz
 Tags:  related posts,related
 Requires at least: 3.8.1
-Tested up to: 5.7.2
-Stable tag: 1.5.8
+Tested up to: 5.8
+Stable tag: 1.5.9
 
 Related Posts plugin. It's flexible and fast and simple.
 
@@ -86,4 +86,6 @@ gmail:horike37@gmail.com
 = 1.5.7 =
 * Fixed warning errors
 = 1.5.8 =
+* Fixed a bug that caused metadata to be deleted in Quick Edit.
+= 1.5.9 =
 * Support for Block Editor

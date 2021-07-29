@@ -1,5 +1,8 @@
 <?php
 class Simple_Related_Posts_Admin_Meta_Box {
+	CONST NONCE_ACTION = 'SIMPLE_RELATED_POSTS';
+	CONST NONCE_NAME = '_nonce_simple_related_posts';
+
 	public function __construct() {
 		add_action( 'save_post', array( $this, 'save_post' ) );
 		add_action( 'admin_menu', array( $this, 'add_meta_box' ) );
@@ -20,11 +23,22 @@ class Simple_Related_Posts_Admin_Meta_Box {
 	}
 	
 	public function save_post($post_id) {
+		// auto save の時は何もしない
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
 		}
+		// WP Cron API で呼び出された時は何もしない
 		if ( wp_doing_cron() ) {
 			return;
+		}
+		// nonce field がなければ何もしない
+		if ( !isset( $_POST[self::NONCE_NAME] ) || !wp_verify_nonce( $_POST[self::NONCE_NAME], self::NONCE_ACTION ) ) {
+			return;
+		}
+
+		// リビジョンなら本物の投稿の ID を取得
+		if ( $parent_id = wp_is_post_revision( $post_id ) ) {
+			$post_id = $parent_id;
 		}
 
 		if ( isset($_POST['simple_related_posts']) && is_array($_POST['simple_related_posts'])) {
@@ -102,7 +116,8 @@ class Simple_Related_Posts_Admin_Meta_Box {
 	
 	public function meta_box() {
 		global $simple_related_posts;
-				
+
+		wp_nonce_field( self::NONCE_ACTION, self::NONCE_NAME );
 		?>
 <div class="sirp_relationship" >
 	<!-- Left List -->

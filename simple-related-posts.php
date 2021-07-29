@@ -4,7 +4,7 @@ Plugin Name: WP Simple Related Posts
 Plugin URI: https://github.com/megumiteam/wp-simple-related-posts
 Description: Display Related Posts. Very Simple.
 Author: digitalcube
-Version: 1.5.8
+Version: 1.5.9
 Author URI: https://github.com/megumiteam/wp-simple-related-posts
 Text Domain: simple-related-posts
 Domain Path: /languages/
