@@ -2,8 +2,8 @@
 Contributors: horike,amimotoami,webnist,wokamoto,gatespace,mt8biz
 Tags:  related posts,related
 Requires at least: 3.8.1
-Tested up to: 5.0.3
-Stable tag: 1.5.7
+Tested up to: 5.7.2
+Stable tag: 1.5.8
 
 Related Posts plugin. It's flexible and fast and simple.
 
@@ -32,6 +32,7 @@ gmail:horike37@gmail.com
 = Contributors =
 - @[ShinichiN](https://profiles.wordpress.org/shinichin)
 - @[Webnist](https://profiles.wordpress.org/webnist)
+- @[mt8biz](https://profiles.wordpress.org/mt8biz)
 
 == Installation ==
 1. Upload `simple-related-posts` to the `/wp-content/plugins/` directory.
@@ -84,3 +85,5 @@ gmail:horike37@gmail.com
 * fix Skip processing at wp-cron, such as when publishing a future post
 = 1.5.7 =
 * Fixed warning errors
+= 1.5.8 =
+* Support for Block Editor

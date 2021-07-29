@@ -27,3 +27,4 @@ You can make addon to use [Addon Template](https://github.com/horike37/wp-simple
 # Contributors
 - @[ShinichiNishikawa](https://github.com/ShinichiNishikawa)
 - @[Webnist](https://github.com/Webnist)
+- @[mt8biz](https://profiles.wordpress.org/mt8biz)
