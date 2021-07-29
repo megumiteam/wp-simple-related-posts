@@ -109,7 +109,40 @@
 				});
 			});
 		},
-		
+
+		block_editor_submit: function()
+		{
+			$('button.editor-post-publish-button').on('click', function(){
+				$('input[name="simple_related_posts[]"]').remove();
+				$('.sirp_relationship .relationship_right .relationship_list li').each(function(index, item) {
+					$('<input />').attr('type', 'hidden')
+					.attr('name', 'simple_related_posts[]')
+					.attr('value', $(item).children('a').attr('data-post_id'))
+					.appendTo('.metabox-base-form');
+				});
+			});
+		},
+
+		block_editor_submit_toggle: function()
+		{
+			$('button.editor-post-publish-panel__toggle').on('click', function(){
+				setTimeout(
+					function () {
+						$('button.editor-post-publish-button').on('click', function(){
+							$('input[name="simple_related_posts[]"]').remove();
+							$('.sirp_relationship .relationship_right .relationship_list li').each(function(index, item) {
+								$('<input />').attr('type', 'hidden')
+								.attr('name', 'simple_related_posts[]')
+								.attr('value', $(item).children('a').attr('data-post_id'))
+								.appendTo('.metabox-base-form');
+							});
+						});
+					},
+					"500"
+				);
+			});
+		},
+
 		reset: function()
 		{
 			$('.sirp_relationship .relationship_right #sirp-reset').on('click', function(e){
@@ -146,5 +179,12 @@
 	$(document).ready(function ()	
     {
         simpleRelatedPosts.init();
-    })
+	})
+
+	$(window).load(function()
+	{
+		simpleRelatedPosts.block_editor_submit();
+		simpleRelatedPosts.block_editor_submit_toggle();
+	})
+
 })(jQuery);
