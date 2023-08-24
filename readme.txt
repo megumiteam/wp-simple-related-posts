@@ -23,12 +23,6 @@ You can use JSON REST API Endpoint. Require plugin [JSON REST API](https://wordp
 * Japanese(ja) - [Horike Takahiro](http://profiles.wordpress.org/horike)
 * Thai(th_TH) - [TG Knowledge](http://www.xn--12cg1cxchd0a2gzc1c5d5a.com)
 
-You can send your own language pack to me.
-
-Please contact to me.
-
-gmail:horike37@gmail.com
-
 = Contributors =
 - @[ShinichiN](https://profiles.wordpress.org/shinichin)
 - @[Webnist](https://profiles.wordpress.org/webnist)
