@@ -4,7 +4,7 @@ Plugin Name: WP Simple Related Posts
 Plugin URI: https://github.com/megumiteam/wp-simple-related-posts
 Description: Display Related Posts. Very Simple.
 Author: digitalcube
-Version: 1.5.9
+Version: 1.6.0
 Author URI: https://github.com/megumiteam/wp-simple-related-posts
 Text Domain: simple-related-posts
 Domain Path: /languages/
@@ -97,6 +97,7 @@ class Simple_Related_Posts {
 		if ( class_exists($option['target']) ) {
 			$this->related = new $option['target'];
 		}
+		add_filter( 'wp_insert_post_data', [ $this, 'save_simple_related_posts' ], 10, 2 );
 	}
 
 	private function requirements() {
@@ -128,6 +129,14 @@ class Simple_Related_Posts {
 
 	public function get_data_api( $num = '', $post_id = null ) {
 		return $this->related->get_data_api($num, $post_id);
+	}
+
+	public function save_simple_related_posts( $data, $postarr ) {
+		if ( 'draft' === $data['post_status'] && isset( $postarr['simple_related_posts'] ) ) {
+			$related_posts = $postarr['simple_related_posts'];
+			update_post_meta( $postarr['ID'], 'simple_related_posts', $related_posts );
+		}
+		return $data;
 	}
 }
 
