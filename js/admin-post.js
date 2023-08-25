@@ -112,7 +112,7 @@
 
 		block_editor_submit: function()
 		{
-			$('button.editor-post-publish-button').on('click', function(){
+			$('button.editor-post-publish-button, button.editor-post-save-draft').on('click', function(){
 				$('input[name="simple_related_posts[]"]').remove();
 				$('.sirp_relationship .relationship_right .relationship_list li').each(function(index, item) {
 					$('<input />').attr('type', 'hidden')

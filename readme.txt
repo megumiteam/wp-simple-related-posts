@@ -83,3 +83,5 @@ You can use JSON REST API Endpoint. Require plugin [JSON REST API](https://wordp
 * Fixed a bug that caused metadata to be deleted in Quick Edit.
 = 1.5.9 =
 * Support for Block Editor
+= 1.6.0 =
+* Added support for manual addition when posts are in draft status.
