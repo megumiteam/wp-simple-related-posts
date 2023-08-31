@@ -85,3 +85,5 @@ You can use JSON REST API Endpoint. Require plugin [JSON REST API](https://wordp
 * Support for Block Editor
 = 1.6.0 =
 * Added support for manual addition when posts are in draft status.
+= 1.6.1 =
+* Changed to always get post ID as an array.

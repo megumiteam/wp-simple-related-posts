@@ -65,13 +65,13 @@ class Simple_Related_Posts_Base {
     	if ( empty( $post_id ) )
 			return false;
 
-		$posts = get_post_meta( $post_id, 'simple_related_posts', true );
+		$posts = get_post_meta( $post_id, 'simple_related_posts', false );
 		
-		if ( !$posts )
+		if ( !$posts && ! is_array( $posts ) )
 			return false;
 		
 		$posts_ids = array();
-		foreach ( $posts as $id ) {
+		foreach ( (array) $posts as $id ) {
 			$my_post = get_post($id);
 			if ( $my_post->post_status === 'publish' && empty($my_post->post_password) ) {
 				$posts_ids[]['ID'] = $id;
