@@ -65,9 +65,15 @@ class Simple_Related_Posts_Base {
     	if ( empty( $post_id ) )
 			return false;
 
-		$posts = get_post_meta( $post_id, 'simple_related_posts', false );
+		$posts = get_post_meta( $post_id, 'simple_related_posts', true );
+
+		// If for some reason meta_value returns as serialized data, try maybe_unsirialize again.
+		if ( ! is_array( $posts ) ) {
+			$posts = maybe_serialize( $posts );
+		}
 		
-		if ( !$posts && ! is_array( $posts ) )
+		// `$posts` is maybe_unserialized so it's definitely an array. Therefore, `! $posts` is equivalent to `empty( $posts )`.
+		if ( ! $posts && ! is_array( $posts ) )
 			return false;
 		
 		$posts_ids = array();
