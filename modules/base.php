@@ -73,7 +73,7 @@ class Simple_Related_Posts_Base {
 		}
 		
 		// `$posts` is maybe_unserialized so it's definitely an array. Therefore, `! $posts` is equivalent to `empty( $posts )`.
-		if ( ! $posts && ! is_array( $posts ) )
+		if ( empty( $posts ) || ! is_array( $posts ) )
 			return false;
 		
 		$posts_ids = array();
