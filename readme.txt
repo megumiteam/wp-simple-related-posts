@@ -2,8 +2,8 @@
 Contributors: horike,amimotoami,webnist,wokamoto,gatespace,mt8biz
 Tags:  related posts,related
 Requires at least: 3.8.1
-Tested up to: 6.3
-Stable tag: 1.6.0
+Tested up to: 6.3.1
+Stable tag: 1.6.1
 
 Related Posts plugin. It's flexible and fast and simple.
 
@@ -85,3 +85,5 @@ You can use JSON REST API Endpoint. Require plugin [JSON REST API](https://wordp
 * Support for Block Editor
 = 1.6.0 =
 * Added support for manual addition when posts are in draft status.
+= 1.6.1 =
+* Changed to always get post ID as an array.
