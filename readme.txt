@@ -35,7 +35,7 @@ You can use JSON REST API Endpoint. Require plugin [JSON REST API](https://wordp
 == Screenshots ==
 1. post screen.
 2. option page.
-3. sigle page.
+3. single page.
 
 == Changelog ==
 = 1.0 =
